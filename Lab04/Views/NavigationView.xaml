@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Lab04.Views.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lab04.Views" xmlns:viewmodels="clr-namespace:Lab04.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Content="{Binding ViewModel,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:InfoViewModel}">
+            <local:InfoView></local:InfoView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <local:LoginView></local:LoginView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EditorViewModel}">
+            <local:EditorView></local:EditorView>
+        </DataTemplate>
+    </UserControl.Resources>
+</UserControl>
